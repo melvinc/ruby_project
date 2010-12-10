@@ -1,0 +1,25 @@
+<h1>Listing labos</h1>
+
+<table>
+  <tr>
+    <th>Labo</th>
+    <th>Docent</th>
+	<th>Actie</th>
+  </tr>
+
+<% @labos.each do |labo| %>
+<tr>
+  <td><%= labo.labo_name %></td>
+  <td><%= labo.docent_name %></td>
+  <td>	
+    <%= link_to 'Show', labo %>
+    <%= link_to 'Edit', edit_labo_path(labo) %>
+    <%= link_to 'Destroy', labo, :confirm => 'Are you sure?', :method => :delete %>
+  </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Labo', new_labo_path %>
